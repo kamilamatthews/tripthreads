@@ -1,0 +1,84 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+// Fonts
+@font-face {
+        font-family: "Gotham-Black";
+        src: url(font-path('Gotham-Black(1).ttf')) format("truetype");
+        font-weight:normal;
+        font-style:normal;
+}
+@font-face {
+        font-family: "Gotham-Black";
+        src: url(font-path('Gotham-BlackItalic(1).ttf')) format("truetype");
+        font-weight:normal;
+        font-style:italic;
+}
+@font-face {
+        font-family: "Gotham-Bold";
+        src: url(font-path('Gotham-Bold(1).ttf')) format("truetype");
+        font-weight:bold;
+        font-style:normal;
+}
+
+@font-face {
+        font-family: "Gotham-Bold";
+        src: url(font-path('Gotham-BoldItalic(1).ttf')) format("truetype");
+        font-weight:bold;
+        font-style:italic;
+}
+@font-face {
+        font-family: "Gotham-Light";
+        src: url(font-path('Gotham-Light(1).ttf')) format("truetype");
+        font-weight:normal;
+        font-style:normal;
+}
+
+@font-face {
+        font-family: "Gotham-Light";
+        src: url(font-path('Gotham-LightItalic(1).ttf')) format("truetype");
+        font-weight:normal;
+        font-style:italic;
+}
+@font-face {
+        font-family: "HelveticaNeue-Thin-Condensed";
+        src: url(font-path('HelveticaNeue-ThinCond.otf')) format("truetype");
+        font-weight:normal;
+        font-style:normal;
+}
+
+@font-face {
+        font-family: "HelveticaNeue-Thin-Condensed-Oblique";
+        src: url(font-path('HelveticaNeue-ThinCondObl.otf')) format("truetype");
+        font-weight:normal;
+        font-style:normal;
+}
+@font-face {
+        font-family: "HelveticaNeue-Thin-Extended";
+        src: url(font-path('HelveticaNeue-ThinExt.otf')) format("truetype");
+        font-weight:normal;
+        font-style:normal;
+}
+
+@font-face {
+        font-family: "HelveticaNeue-Thin-Extended-Oblique";
+        src: url(font-path('HelveticaNeue-ThinExtObl.otf')) format("truetype");
+        font-weight:normal;
+        font-style:normal;
+}
