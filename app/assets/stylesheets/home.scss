@@ -1,0 +1,66 @@
+#home-header {
+  background-image: image-url('tripthreads_classy_woman_lounge.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  // background-position: center center;
+  height: 500px;
+  color: white;
+  text-shadow: 1px 1px black;
+}
+
+#home-what-is {
+  background-color: #151515;
+  min-height: 300px;
+  color: white !important;
+}
+
+#home-how-it-works {
+  background-image: image-url('style_collection.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 700px;
+}
+
+#home-how-it-works-desc {
+  background-color: #f6f6f6;
+  min-height: 300px;
+  color: black !important;
+}
+
+.how-it-works-img {
+  margin-bottom:20px;
+  margin-top:20px;
+  height: 50px;
+}
+
+#home-why-use-tripthreads {
+  background-image: image-url('tripthreads_beach_look.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right;
+  height: 500px;
+}
+
+#home-brands-we-offer-desc {
+  background-color: #27454e;
+  min-height: 300px;
+  color: black !important;
+}
+
+#pricing {
+  background-color: #141a26;
+  min-height: 300px;
+  color: white !important;
+}
+
+#get-started {
+  background-image: image-url('intl_map.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 500px;
+}
+
+.content-box {
+  padding:50px;
+}
