@@ -2,7 +2,7 @@
   background-image: image-url('tripthreads_classy_girl_lounge.png');
   background-size: cover;
   background-repeat: no-repeat;
-  // background-position: 0px -150px;
+  background-position: right -150px;
   height: 600px;
   color: white;
   // text-shadow: 1px 1px black;
@@ -59,8 +59,46 @@
   background-size: cover;
   background-repeat: no-repeat;
   height: 500px;
+  color: #c1c1c1;
+}
+
+#get-started ul {
+  list-style-type: square;
+  font-family: 'Gotham-Light';
+  font-size: 16px;
+}
+
+// #membership-card {
+//   position: absolute;
+//   top: 50%;
+//   transform: translateY(-50%);
+// }
+
+#membership-card img {
+  // border: 2px solid gray;
+  // height: 300px;
+  // width: 100%;
+  // border-radius:10px;
+  // padding:20px;
+  width:100%;
+}
+
+#get-started .btn {
+  // background-color: #ff5f00;
+  background-color: #b07c39;
+  color: white;
 }
 
 .content-box {
   padding:50px;
+}
+
+.social {
+  width: 25px;
+  margin-right: 10px;
+}
+
+.brands {
+  width:120px;
+  margin-right: 30px;
 }

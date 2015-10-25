@@ -14,14 +14,16 @@
           <li>FAQs</li>
           <li>Email help@tripthreads.com</li>
         </ul>
+        <small>
+          &copy; Tripthreads, <%= DateTime.now.strftime("%Y") %>
+        </small>
       </div>
       <div class="col-md-4 col-sm-4 col-xs-4">
         <h4>Follow us!</h4>
-        Put social bar here
+        <%= image_tag 'instagram.png', class: 'social'%>
+        <%= image_tag 'twitter.png', class: 'social' %>
+        <%= image_tag 'pinterest.png', class: 'social' %>
       </div>
-    </div>
-    <div class="row" style="text-align:center;">
-      (c) Tripthreads, <%= DateTime.now.strftime("%Y") %>
     </div>
   </div>
 </div>
