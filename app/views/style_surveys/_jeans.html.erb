@@ -1,0 +1,11 @@
+<% Look::MAX_OUTFITS.times do |ct| %>
+  <div class="survey-panel" id="jeans-types-<%=ct%>">
+    <h2>Which style of jeans do you prefer?</h2>
+    <% Look.jeans.each do |j| %>
+      <div class="col-lg-3 col-md-3 col-sm-3">
+        <%= fl.check_box :preferred_jeans_types, {multiple: true} %><%= j %>
+      </div>
+    <% end %>
+    <a href="#shoes-types" id="jeans-types-next" class="btn btn-warning">Next</a>
+  </div>
+<% end %>

@@ -1,0 +1,46 @@
+<div class="centered-form">
+  <%= form_for @style_survey do |f| %>
+
+    <!-- Error handling  -->
+    <% if @style_survey.errors.any? %>
+      <div class="alert alert-danger">
+        <h4>There are <%= pluralize(@style_survey.errors.count, "error") %>.</h4>
+        <ul>
+          <% @style_survey.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <!-- Main form  -->
+    <%= fields_for @destination do |fa| %>
+      <%= render partial: 'destination', locals: {fa: fa} %>
+      <%= render partial: 'climate', locals: {fa: fa} %>
+      <%= render partial: 'purpose', locals: {fa: fa} %>
+    <% end %>
+    <%= render partial: 'style_type', locals: {f: f} %>
+    <%= render partial: 'colors', locals: {f: f} %>
+    <%= render partial: 'patterns', locals: {f: f} %>
+    <%= render partial: 'brands', locals: {f: f} %>
+    <%= render partial: 'age', locals: {f: f} %>
+    <%= fields_for @destination do |fa| %>
+      <%= fa.fields_for @look do |fl| %>
+        <%= render partial: 'no_of_looks', locals: {fa: fa} %>
+        <!-- Start loop based on No. of looks -->
+        <%= render partial: 'look_basics', locals: {fl: fl} %>
+        <%= render partial: 'look_items', locals: {fl: fl} %>
+        <%= render partial: 'jeans', locals: {fl: fl} %>
+        <%= render partial: 'shoes', locals: {fl: fl} %>
+        <!-- Move this one -->
+        <%= render partial: 'jewelry_color', locals: {f: f} %>
+        <!-- ... -->
+        <%= render partial: 'jewelry_pieces', locals: {fl: fl} %>
+        <!-- End loop -->
+        <%= render partial: 'piercings', locals: {f: f} %>
+        <%= render partial: 'additional_info', locals: {f: f} %>
+        <%= render partial: 'get_to_know_you', locals: {f: f} %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

@@ -1,0 +1,12 @@
+<% Look::MAX_OUTFITS.times do |ct| %>
+  <div class="survey-panel" id="look-items-<%=ct%>">
+    <h2>Which items would you prefer us to include in your look?</h2>
+    <small>Please select up to 5</small>
+    <% Look.look_items.each do |l| %>
+      <div class="col-lg-3 col-md-3 col-sm-3">
+        <%= fl.check_box :items, {multiple: true} %><%= l %>
+      </div>
+    <% end %>
+    <a href="#jeans-types" id="look-items-next" class="btn btn-warning">Next</a>
+  </div>
+<% end %>

@@ -11,10 +11,60 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151006142457) do
+ActiveRecord::Schema.define(version: 20151107193836) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "destinations", force: :cascade do |t|
+    t.integer  "itinerary_id"
+    t.string   "name"
+    t.string   "climate"
+    t.string   "purpose"
+    t.integer  "number_of_outfits_needed"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  add_index "destinations", ["itinerary_id"], name: "index_destinations_on_itinerary_id", using: :btree
+
+  create_table "itineraries", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "itineraries", ["user_id"], name: "index_itineraries_on_user_id", using: :btree
+
+  create_table "looks", force: :cascade do |t|
+    t.integer  "destination_id"
+    t.string   "name"
+    t.text     "items",                 default: [],              array: true
+    t.text     "preferred_jeans_types", default: [],              array: true
+    t.text     "preferred_shoes_types", default: [],              array: true
+    t.text     "jewelry_types",         default: [],              array: true
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+  end
+
+  add_index "looks", ["destination_id"], name: "index_looks_on_destination_id", using: :btree
+
+  create_table "style_surveys", force: :cascade do |t|
+    t.integer  "user_id"
+    t.text     "style_type",             default: [],              array: true
+    t.text     "colors",                 default: [],              array: true
+    t.text     "patterns",               default: [],              array: true
+    t.text     "preferred_brands",       default: [],              array: true
+    t.string   "preferred_jewelry_type"
+    t.integer  "age"
+    t.boolean  "ear_piercings"
+    t.text     "additional_info",        default: [],              array: true
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+  end
+
+  add_index "style_surveys", ["user_id"], name: "index_style_surveys_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -37,10 +87,16 @@ ActiveRecord::Schema.define(version: 20151006142457) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "token"
+    t.string   "pinterest_url"
+    t.string   "twitter_url"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["token"], name: "index_users_on_token", unique: true, using: :btree
 
+  add_foreign_key "destinations", "itineraries"
+  add_foreign_key "itineraries", "users"
+  add_foreign_key "looks", "destinations"
+  add_foreign_key "style_surveys", "users"
 end

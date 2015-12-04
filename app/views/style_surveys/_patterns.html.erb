@@ -1,0 +1,11 @@
+<div class="survey-panel" id="patterns_section">
+  <h2>Which patterns do you like?</h2>
+  <% StyleSurvey.patterns.each do |ptn| %>
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 pattern_value">
+      <%= f.check_box :patterns, {multiple: true}, style: "background-color:#{ptn}", class: 'pattern-circle' %><%= ptn %>
+    </div>
+  <% end %>
+</br>
+  <a href="#brands_section" id="patterns-next" class="btn btn-warning">Next</a>
+  <%= f.hidden_field :patterns, id: 'colors' %>
+</div>

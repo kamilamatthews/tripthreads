@@ -1,0 +1,11 @@
+'<div id="climate_form" xclass="survey-panel">
+  <h2>What is the climate in <span id="insert-destination"></span>?</h2>
+  <% Destination.climates.each do |cl| %>
+    <div class="col-lg-4 col-md-4 col-sm-4 climate_value" id="<%= cl %>">
+      <label class="radio-inline"><%= fa.radio_button :climate, cl[:name], required: true %><%= cl[:name] %></label>
+    </div>
+  <% end %>
+  <%= fa.hidden_field :climate, id: 'climate' %>
+  <a href="#purpose_section" id="climate-next" class="btn btn-warning">Next</a>
+</div>
+'

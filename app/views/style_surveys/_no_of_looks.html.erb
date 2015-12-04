@@ -1,0 +1,10 @@
+<div id="looks_section" class="survey-panel">
+  <h2>In <span id="no_looks_header"></span>, how many outfits will you need us to come up with?</h2>
+  Great! You'll give us more information for your first outfit here, and we can do the rest later.
+  <% Look::MAX_OUTFITS.times do %>
+    <%= check_box_tag :outfit_count, 1, false, class: 'outfit_count' %>x
+  <% end %>
+  <%= fa.hidden_field :number_of_outfits_needed %>
+  <a href="#look-basics" id="looks-count-next" class="btn btn-warning">Next</a>
+
+</div>

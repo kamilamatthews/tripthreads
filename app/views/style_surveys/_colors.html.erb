@@ -1,0 +1,11 @@
+<div class="survey-panel" id="colors_section">
+  <h2>Which colors do you like in general?</h2>
+  <% StyleSurvey.colors.each do |clr| %>
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 color_value">
+      <%= f.check_box :colors, {multiple: true}, clr, style: "background-color:#{clr}", class: 'color-circle' %><div class="color-circle" style="background-color:<%=clr%>"></div>
+    </div>
+  <% end %>
+</br>
+  <%= f.hidden_field :colors, id: 'colors' %>
+  <a href="#patterns_section" id="colors-next" class="btn btn-warning">Next</a>
+</div>

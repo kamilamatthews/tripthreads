@@ -1,0 +1,15 @@
+<div id="purpose_section" class="survey-panel">
+  <h2>What is the purpose of your visit?</h2>
+  <% Destination.purposes.each do |pp| %>
+    <div class="col-lg-3 col-md-3 col-sm-3 purpose-value" id="<%= pp %>">
+      <div class="checkbox">
+        <%= fa.check_box :purpose, {multiple: true}, pp %><%= pp %>
+      </div>
+    </div>
+  <% end %>
+  <div id="other-purpose" style="display:none;">
+    <%= text_field_tag 'other-purpose-value', nil, class: 'form-control' %>
+  </div>
+  <%= fa.hidden_field :purpose, id: 'purposes' %>
+  <a href="#style_type_section" id="purpose-next" class="btn btn-warning">Next</a>
+</div>

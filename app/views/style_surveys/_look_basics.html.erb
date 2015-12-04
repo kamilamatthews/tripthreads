@@ -1,0 +1,13 @@
+<% Look::MAX_OUTFITS.times do |ct| %>
+  <div class="survey-panel" id="look-basics-<%=ct%>">
+    <h2><span id="insert-destination"></span> Look #<span id="look-index"></span></h2>
+    <h3>This look is for <%= fl.text_field :name, placeholder: 'e.g. "Evening wear for white tie dinner"'%></h3>
+    <h3>Day or night?</h3>
+    <!-- Radio  -->
+    <h3>Day of the week</h3>
+    <!-- Radio -->
+    <h3>I would like to match the outfit to some clothes of my own image (add image)</h3>
+    <!-- Need to build this in -->
+    <a href="#look-items" id="looks-basic-next" class="btn btn-warning">Next</a>
+  </div>
+<% end %>

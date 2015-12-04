@@ -1,0 +1,13 @@
+<div class="survey-panel" id="style_type_section">
+  <h2>Which style best describes you?</h2>
+  <small>Not finding your exact style type? Simply select the one that matches best
+    and you will be able to clarify with your stylist.
+  </small>
+    <% StyleSurvey.style_types.each do |ss| %>
+      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 style_type_value">
+        <%= f.check_box :style_type, {multiple: true}, ss %><%= ss %>
+      </div>
+    <% end %>
+  <%= f.hidden_field :style_type, id: 'style_types' %>
+  <a href="#colors_section" id="styles-next" class="btn btn-warning">Next</a>
+</div>

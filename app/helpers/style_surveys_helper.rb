@@ -1,0 +1,2 @@
+module StyleSurveysHelper
+end
