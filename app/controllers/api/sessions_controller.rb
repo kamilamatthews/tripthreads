@@ -4,7 +4,11 @@ class Api::SessionsController < ApiController
 
     respond_to do |format|
       format.json do
-        render json: {token: authenticate_user.token}, status: :created
+        if authenticate_user
+          render json: {status: 'success', token: authenticate_user.token}, status: :created
+        else
+          render json: {status: 'unauthorized'}, status: :unauthorized
+        end
       end
     end
 
@@ -17,11 +21,10 @@ class Api::SessionsController < ApiController
       user.update_attribute(:failed_attempts, 0) unless user.failed_attempts.zero?
       return user
     end
-    raise UnauthorizedAccess
   end
 
   def assert_request_content_type(content_type)
-    raise UnsupportedMediaType unless request.content_type == content_type
+    raise 'unsupported_media_type' unless request.content_type == content_type
   end
 
   def user_params
